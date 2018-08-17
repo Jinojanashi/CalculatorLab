@@ -16,5 +16,22 @@ namespace CPE200Lab1
         {
             InitializeComponent();
         }
+
+        protected void btn(object sender,EventArgs e)
+        {
+            Button click = (Button)sender;
+            if (click.Text == "C")
+            {
+                lblDisplay.Clear();
+            }
+            else
+            {
+                lblDisplay.Text == click.Text.ToString();
+            }
+        }
+        private void btn1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

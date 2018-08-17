@@ -170,6 +170,7 @@
             this.btn1.TabIndex = 8;
             this.btn1.Text = "1";
             this.btn1.UseVisualStyleBackColor = true;
+            this.btn1.Click += new System.EventHandler(this.btn1_Click);
             // 
             // btnEqual
             // 
@@ -256,6 +257,7 @@
             this.lblDisplay.AutoSize = true;
             this.lblDisplay.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDisplay.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.lblDisplay.Location = new System.Drawing.Point(12, 63);
             this.lblDisplay.MinimumSize = new System.Drawing.Size(370, 0);
             this.lblDisplay.Name = "lblDisplay";
@@ -263,6 +265,7 @@
             this.lblDisplay.TabIndex = 20;
             this.lblDisplay.Text = "0";
             this.lblDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblDisplay.Click += new System.EventHandler(this.btn);
             // 
             // Form1
             // 
