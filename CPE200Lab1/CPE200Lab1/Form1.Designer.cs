@@ -49,6 +49,7 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.lblDisplay = new System.Windows.Forms.Label();
+            this.syn = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn7
@@ -60,6 +61,7 @@
             this.btn7.TabIndex = 0;
             this.btn7.Text = "7";
             this.btn7.UseVisualStyleBackColor = true;
+            this.btn7.Click += new System.EventHandler(this.btnA_Click);
             // 
             // btn8
             // 
@@ -70,6 +72,7 @@
             this.btn8.TabIndex = 1;
             this.btn8.Text = "8";
             this.btn8.UseVisualStyleBackColor = true;
+            this.btn8.Click += new System.EventHandler(this.btnA_Click);
             // 
             // btn9
             // 
@@ -80,6 +83,7 @@
             this.btn9.TabIndex = 2;
             this.btn9.Text = "9";
             this.btn9.UseVisualStyleBackColor = true;
+            this.btn9.Click += new System.EventHandler(this.btnA_Click);
             // 
             // btnMultiply
             // 
@@ -90,6 +94,7 @@
             this.btnMultiply.TabIndex = 3;
             this.btnMultiply.Text = "X";
             this.btnMultiply.UseVisualStyleBackColor = true;
+            this.btnMultiply.Click += new System.EventHandler(this.Operate_Click);
             // 
             // btnMinus
             // 
@@ -100,6 +105,7 @@
             this.btnMinus.TabIndex = 7;
             this.btnMinus.Text = "-";
             this.btnMinus.UseVisualStyleBackColor = true;
+            this.btnMinus.Click += new System.EventHandler(this.Operate_Click);
             // 
             // btn6
             // 
@@ -110,6 +116,7 @@
             this.btn6.TabIndex = 6;
             this.btn6.Text = "6";
             this.btn6.UseVisualStyleBackColor = true;
+            this.btn6.Click += new System.EventHandler(this.btnA_Click);
             // 
             // btn5
             // 
@@ -120,6 +127,7 @@
             this.btn5.TabIndex = 5;
             this.btn5.Text = "5";
             this.btn5.UseVisualStyleBackColor = true;
+            this.btn5.Click += new System.EventHandler(this.btnA_Click);
             // 
             // btn4
             // 
@@ -130,6 +138,7 @@
             this.btn4.TabIndex = 4;
             this.btn4.Text = "4";
             this.btn4.UseVisualStyleBackColor = true;
+            this.btn4.Click += new System.EventHandler(this.btnA_Click);
             // 
             // btnPlus
             // 
@@ -140,6 +149,7 @@
             this.btnPlus.TabIndex = 11;
             this.btnPlus.Text = "+";
             this.btnPlus.UseVisualStyleBackColor = true;
+            this.btnPlus.Click += new System.EventHandler(this.Operate_Click);
             // 
             // btn3
             // 
@@ -150,6 +160,7 @@
             this.btn3.TabIndex = 10;
             this.btn3.Text = "3";
             this.btn3.UseVisualStyleBackColor = true;
+            this.btn3.Click += new System.EventHandler(this.btnA_Click);
             // 
             // btn2
             // 
@@ -160,6 +171,7 @@
             this.btn2.TabIndex = 9;
             this.btn2.Text = "2";
             this.btn2.UseVisualStyleBackColor = true;
+            this.btn2.Click += new System.EventHandler(this.btnA_Click);
             // 
             // btn1
             // 
@@ -170,7 +182,7 @@
             this.btn1.TabIndex = 8;
             this.btn1.Text = "1";
             this.btn1.UseVisualStyleBackColor = true;
-            this.btn1.Click += new System.EventHandler(this.btn1_Click);
+            this.btn1.Click += new System.EventHandler(this.btnA_Click);
             // 
             // btnEqual
             // 
@@ -181,6 +193,7 @@
             this.btnEqual.TabIndex = 15;
             this.btnEqual.Text = "=";
             this.btnEqual.UseVisualStyleBackColor = true;
+            this.btnEqual.Click += new System.EventHandler(this.Equa_Click);
             // 
             // btnDot
             // 
@@ -191,6 +204,7 @@
             this.btnDot.TabIndex = 14;
             this.btnDot.Text = ".";
             this.btnDot.UseVisualStyleBackColor = true;
+            this.btnDot.Click += new System.EventHandler(this.btnA_Click);
             // 
             // btn0
             // 
@@ -201,6 +215,7 @@
             this.btn0.TabIndex = 13;
             this.btn0.Text = "0";
             this.btn0.UseVisualStyleBackColor = true;
+            this.btn0.Click += new System.EventHandler(this.btnA_Click);
             // 
             // btnSign
             // 
@@ -211,6 +226,7 @@
             this.btnSign.TabIndex = 12;
             this.btnSign.Text = "±";
             this.btnSign.UseVisualStyleBackColor = true;
+            this.btnSign.Click += new System.EventHandler(this.btnSign_Click);
             // 
             // btnDivide
             // 
@@ -221,6 +237,7 @@
             this.btnDivide.TabIndex = 16;
             this.btnDivide.Text = "÷";
             this.btnDivide.UseVisualStyleBackColor = true;
+            this.btnDivide.Click += new System.EventHandler(this.Operate_Click);
             // 
             // btnPercent
             // 
@@ -231,6 +248,7 @@
             this.btnPercent.TabIndex = 17;
             this.btnPercent.Text = "%";
             this.btnPercent.UseVisualStyleBackColor = true;
+            this.btnPercent.Click += new System.EventHandler(this.Percent_Click);
             // 
             // btnClear
             // 
@@ -241,6 +259,7 @@
             this.btnClear.TabIndex = 18;
             this.btnClear.Text = "C";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnBack
             // 
@@ -251,13 +270,14 @@
             this.btnBack.TabIndex = 19;
             this.btnBack.Text = "<";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // lblDisplay
             // 
             this.lblDisplay.AutoSize = true;
             this.lblDisplay.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDisplay.ForeColor = System.Drawing.Color.DarkGoldenrod;
+            this.lblDisplay.ForeColor = System.Drawing.Color.Black;
             this.lblDisplay.Location = new System.Drawing.Point(12, 63);
             this.lblDisplay.MinimumSize = new System.Drawing.Size(370, 0);
             this.lblDisplay.Name = "lblDisplay";
@@ -265,13 +285,24 @@
             this.lblDisplay.TabIndex = 20;
             this.lblDisplay.Text = "0";
             this.lblDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblDisplay.Click += new System.EventHandler(this.btn);
+            // 
+            // syn
+            // 
+            this.syn.AutoSize = true;
+            this.syn.BackColor = System.Drawing.Color.White;
+            this.syn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.syn.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.syn.Location = new System.Drawing.Point(12, 63);
+            this.syn.Name = "syn";
+            this.syn.Size = new System.Drawing.Size(0, 29);
+            this.syn.TabIndex = 22;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(394, 508);
+            this.Controls.Add(this.syn);
             this.Controls.Add(this.lblDisplay);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnClear);
@@ -323,6 +354,7 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label lblDisplay;
+        private System.Windows.Forms.Label syn;
     }
 }
 
