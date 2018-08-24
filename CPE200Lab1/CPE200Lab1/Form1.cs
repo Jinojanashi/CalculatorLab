@@ -18,8 +18,9 @@ namespace CPE200Lab1
         string Operate = "";
         bool operationClick = false;
         bool PercentClick = false;
-        bool signClick = false;
         bool clearClick = false;
+        bool equaClick = false;
+        bool dotClick = false;
         public Form1()
         {
             InitializeComponent();
@@ -28,16 +29,34 @@ namespace CPE200Lab1
         private void btnA_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            if (lblDisplay.Text == "0")
+            if (equaClick == false)
             {
-                lblDisplay.Text = "";
-                if (btn.Text == ".") lblDisplay.Text = "0.";
+                if (lblDisplay.Text == "0")
+                {
+                    lblDisplay.Text = "";
+                    
+                }
+                if (lblDisplay.Text.Length < 8 )
+                {
+                    lblDisplay.Text = lblDisplay.Text + btn.Text;
+                }
             }
-            if (lblDisplay.Text.Length < 8 && btn.Text != "." )
+            else // after click equa when you press button change to?
             {
-                lblDisplay.Text = lblDisplay.Text + btn.Text;
+                lblDisplay.Text = btn.Text;
+                equaClick = false;
             }
 
+        }
+        private void dot_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            if(dotClick == false)
+            {
+                if (lblDisplay.Text == "0") lblDisplay.Text = "0."; //if first time you press a . button display show 0.x
+                else lblDisplay.Text = lblDisplay.Text + ".";
+                dotClick = true;
+            }
         }
 
         private void Operate_Click(object sender, EventArgs e)
@@ -69,29 +88,29 @@ namespace CPE200Lab1
                     Num = float.Parse(lblDisplay.Text);
                     sum = num + Num;
                     lblDisplay.Text = "0";
-
+                    dotClick = false;
                     if (Operation == "+")
                     {
                         Operate = Operation;
-                        sum = (sum + float.Parse(lblDisplay.Text));
+                        sum = (sum + Num);
                         Operation = "";
                     }
                     else if (Operation == "-")
                     {
                         Operate = Operation;
-                        sum = (sum - float.Parse(lblDisplay.Text));
+                        sum = (sum - Num);
                         Operation = "";
                     }
                     else if (Operation == "X")
                     {
                         Operate = Operation;
-                        sum = (sum * float.Parse(lblDisplay.Text));
+                        sum = (sum * Num);
                         Operation = "";
                     }
                     else if (Operation == "÷")
                     {
                         Operate = Operation;
-                        sum = (sum / float.Parse(lblDisplay.Text));
+                        sum = (sum / Num);
                         Operation = "";
                     }
                     num = sum;
@@ -110,13 +129,13 @@ namespace CPE200Lab1
         private void btnSign_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            signClick = true;
             numSign = float.Parse(lblDisplay.Text)*-1;
             lblDisplay.Text = numSign.ToString();
         }
 
         private void Equa_Click(object sender, EventArgs e)
         {
+            equaClick = true;
             syn.Text = "";
             if (PercentClick == true)
             {
@@ -135,36 +154,38 @@ namespace CPE200Lab1
             
             operationClick = false;
             PercentClick = false;
+            dotClick = false;
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            if (clearClick == false)
+            if (clearClick == false) //clear display
             {
                 lblDisplay.Text = "0";
                 clearClick = true;
+                dotClick = false;
             }
-            else
+            else // clear operator
             {
                 syn.Text = "";
                 operationClick = false;
                 PercentClick = false;
-                signClick = false;
                 clearClick = false;
             }
         }
 
         private void btnBack_Click(object sender, EventArgs e)
-        {
+        { 
             int N = lblDisplay.Text.Length;
             int M = N - 1;
             string a = lblDisplay.Text;
             string[] value = new string[9];
             string[] val = new string[9];
+            dotClick = false;
             for (int i = 0 ; i < N ; i++ ) val[i] = a.Substring(i, 1);
             for (int j = 0; j < M; j++) value[j] = val[j];
             lblDisplay.Text = String.Join("", value);
-            if (lblDisplay.Text.Length == 0) lblDisplay.Text = "0";
+            if (lblDisplay.Text.Length == 0)  lblDisplay.Text = "0";
         }
     }
 }
